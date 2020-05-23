@@ -1,0 +1,37 @@
+===============================
+ TEST SUITE - 3-say_my_name.py
+===============================
+
+Test for a single function.
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+-------------------------------
+Test for one and two strings
+-------------------------------
+    >>> say_my_name("Ricardo", "Hincapie")
+    Ricardo Hincapie
+
+    >>> say_my_name("Johanna", "Saenz")
+    Johanna Saenz
+
+    >>> say_my_name("Negri")
+    Negri
+
+    >>> say_my_name("Ric")
+    Ric
+
+-------------------------------
+Test for non strings
+-------------------------------
+    >>> say_my_name("Ricardo", 123)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(123)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name([1, 2, 3])
+    Traceback (most recent call last):
+    TypeError: first_name must be a string

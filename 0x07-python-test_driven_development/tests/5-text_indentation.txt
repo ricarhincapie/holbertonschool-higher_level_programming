@@ -1,0 +1,30 @@
+===============================
+ TEST SUITE - 5-text_indentation.py
+===============================
+
+Test for a single function.
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+-------------------------------
+Test for regular string
+-------------------------------
+    >>> text_indentation("""Hi, mama. I love you.""")
+    Hi, mama.
+    <BLANKLINE>
+    I love you.
+    <BLANKLINE>
+
+    >>> text_indentation("Hi, im Ric?")
+    Hi, im Ric?
+    <BLANKLINE>
+
+-------------------------------
+Test for no string
+-------------------------------
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    TypeError: text must be a string   
+    
+     
+
