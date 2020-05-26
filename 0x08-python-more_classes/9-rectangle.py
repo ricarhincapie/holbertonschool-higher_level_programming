@@ -136,4 +136,4 @@ class Rectangle:
             :param cls:
             :param size=0:
         """
-        return cls(size, size)
+        return Rectangle(size, size)
