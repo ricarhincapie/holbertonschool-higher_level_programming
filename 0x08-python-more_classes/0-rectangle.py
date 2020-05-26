@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-class Rectangle:
-    """This module creates a class Rectangle.
-    """
+ """This module creates a class Rectangle."""
 
+
+class Rectangle:
+     """Class that creates a Rectangle.
+    """
     pass
