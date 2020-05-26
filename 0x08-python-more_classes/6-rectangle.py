@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""This module creates a class Rectangle."""
+
+
 class Rectangle:
-    """This module creates a class Rectangle.
+    """Class that creates a Rectangle.
     """
     number_of_instances = 0
 
