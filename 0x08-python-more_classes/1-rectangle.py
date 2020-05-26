@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+"""This module creates a class Rectangle."""
+
+
 class Rectangle:
     """This module creates a class Rectangle.
     """
-    
+
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
