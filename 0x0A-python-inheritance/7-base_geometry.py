@@ -20,7 +20,7 @@ class BaseGeometry():
                     :param name:
                     :param value:
             """
-            if type(value) is not int:
+            if type(value) != int:
                     raise TypeError("{} must be an integer".format(name))
 
             if value <= 0:
