@@ -1,0 +1,23 @@
+===============================
+ TEST SUITE - 7-base-geometry.py
+===============================
+
+Import Class
+
+        >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+Create instance
+
+        >>> my_base = BaseGeometry()
+
+        >>> my_base.area()
+        Traceback (most recent call last):
+        Exception: area() is not implemented
+
+        >>> my_base.integer_validator("hola", 0)
+        Traceback (most recent call last):
+        ValueError: hola must be greater than 0
+
+        >>> my_base.integer_validator("hola", 5)
+

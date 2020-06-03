@@ -1,0 +1,35 @@
+===============================
+ TEST SUITE - 1-my_list.py
+===============================
+
+Import Class
+
+        >>> MyList = __import__('1-my_list').MyList
+
+Create instance
+
+        >>> new_list = MyList([1, 2, 99, 3])
+
+        >>> new_list2 = MyList([-10, -99, -20])
+
+        >>> new_list3 = MyList([10, -99, -20])
+
+Test cases
+
+        >>> print(new_list)
+        [1, 2, 99, 3]
+
+        >>> new_list.print_sorted()
+        [1, 2, 3, 99]
+
+        >>> print(new_list2)
+        [-10, -99, -20]
+
+        >>> new_list2.print_sorted()
+        [-99, -20, -10]
+
+        >>> print(new_list3)
+        [10, -99, -20]
+
+        >>> new_list3.print_sorted()
+        [-99, -20, 10]
