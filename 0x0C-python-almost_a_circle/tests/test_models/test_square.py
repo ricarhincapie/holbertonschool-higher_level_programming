@@ -15,6 +15,7 @@ class TestSquare(unittest.TestCase):
     def setUp(self):
         """setUp
         """
+        Base._Base__nb_objects = 0
         self.a = Square(1)
         self.b = Square(5, 0, 0, 98)
         self.c = Square(4)

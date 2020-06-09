@@ -4,6 +4,7 @@
 
 import unittest
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class TestRectangle(unittest.TestCase):
@@ -11,6 +12,7 @@ class TestRectangle(unittest.TestCase):
 
     def setUp(self):
         """Set up"""
+        Base._Base__nb_objects = 0
         self.c = Rectangle(2, 2)
 
     def test_rectangle(self):
