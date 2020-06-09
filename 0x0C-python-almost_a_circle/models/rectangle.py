@@ -42,9 +42,8 @@ class Rectangle(Base):
         Returns:
             [str] -- A string
         """
-        string = "[Rectangle] ({}) {}/{} - {}/{}\
-            ".format(self.id, self.__x, self.__y, self.__width, self.__height)
-        return string
+        string = "[Rectangle] ({}) {}/{} - {}/{}"
+        return string.format(self.id, self.x, self.y, self.width, self.height)
 
     @property  # PROPERTY FOR HEIGHT
     def height(self):
