@@ -4,6 +4,7 @@ Base module
 """
 import json
 import os
+import csv
 
 
 class Base():
@@ -106,3 +107,35 @@ class Base():
             for instance in data:
                 my_list.append(cls.create(**instance))
         return my_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save_to_file_csv
+        """
+        my_list_objs = [x.to_dictionary() for x in list_objs]
+        filename = cls.__name__ + ".csv"
+        if(cls.__name__ == "Rectangle"):
+            my_headers = ["id", "width", "height", "x", "y"]
+        if(cls.__name__ == "Square"):
+            my_headers = ["id", "size", "x", "y"]
+        with open(filename, "w") as my_file:
+            my_writer = csv.DictWriter(my_file, fieldnames=my_headers)
+        my_writer.writeheader()
+        for my_dic in list_objs:
+            my_writer.writerow(my_dic.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads csv and return list of instances with those
+            characteristics
+        """
+        instance_list = []
+        filename = cls.__name__ + ".csv"
+        if not os.path.isfile(filename):
+            return (instance_list)
+        with open(filename) as my_file:
+            csv_reader = csv.DictReader(my_file)
+            for row in csv_reader:
+                row = {key: int(row[key]) for key in row.keys()}
+                instance_list.append(cls.create(**row))
+        return(instance_list)
