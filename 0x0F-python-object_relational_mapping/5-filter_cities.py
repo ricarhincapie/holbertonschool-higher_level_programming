@@ -15,11 +15,10 @@ if __name__ == '__main__':
     WHERE state_id = (SELECT id FROM states WHERE name = %s) \
     ORDER BY id ASC"
     cur.execute(my_text, (state_searched,))  # Here, a tuple needs to be used
-
-    begin = 0
+    flag = 0
     for row in cur.fetchall():
-        if begin == 0:
-            begin += 1
+        if flag == 0:
+            flag += 1
         else:
             print(", ", end='')
         print(row[0], end='')
