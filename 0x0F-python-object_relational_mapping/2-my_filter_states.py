@@ -11,8 +11,8 @@ if __name__ == '__main__':
     db = MySQLdb.connect(host="localhost", port=3306, user=user,
                          passwd=password, db=database)
     cur = db.cursor()
-    my_text = "SELECT * FROM states WHERE name = " \
-              + '\'' + state_searched + '\'' + " ORDER BY id ASC"
+    my_text = "SELECT * FROM states WHERE name = '{}' \
+               ORDER BY id ASC".format(state_searched)
     cur.execute(my_text)
     rows = cur.fetchall()
     for row in rows:
