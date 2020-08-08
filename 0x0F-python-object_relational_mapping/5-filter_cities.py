@@ -12,7 +12,8 @@ if __name__ == '__main__':
                          passwd=password, db=database)
     cur = db.cursor()
     my_text = "SELECT name FROM cities \
-    WHERE state_id = (SELECT id FROM states WHERE name = %s)"
+    WHERE state_id = (SELECT id FROM states WHERE name = %s) \
+    ORDER BY id ASC"
     cur.execute(my_text, (state_searched,))  # Here, a tuple needs to be used
     rows = cur.fetchall()
     flag = 0
