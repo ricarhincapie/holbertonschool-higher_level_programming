@@ -17,7 +17,10 @@ if __name__ == "__main__":
 
     result = session.query(State).filter(State.name == user_query).all()
 
-    for row in result:
-        print(row.id)
+    if result is None:
+        print("Not found")
+    else:
+        for row in result:
+            print(row.id)
 
     session.close()
