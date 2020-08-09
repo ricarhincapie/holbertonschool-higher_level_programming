@@ -15,12 +15,11 @@ if __name__ == "__main__":
 
     user_query = sys.argv[4]
 
-    result = session.query(State).filter(State.name == user_query).all()
+    result = session.query(State).filter(State.name == user_query).first()
 
     if result is None:
         print("Not found")
     else:
-        for row in result:
-            print(row.id)
+        print(result.id)
 
     session.close()
