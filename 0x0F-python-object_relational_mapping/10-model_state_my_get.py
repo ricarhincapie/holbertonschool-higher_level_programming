@@ -16,7 +16,7 @@ if __name__ == "__main__":
     user_query = sys.argv[4]
 
     result = session.query(State).filter(State.name == user_query).first()
-
+    # The main result here was bad with .all(). Worked with .first()
     if result is None:
         print("Not found")
     else:
