@@ -13,7 +13,7 @@ if __name__ == '__main__':
     my_text = "SELECT c.id, c.name, s.name FROM cities c \
                INNER JOIN states s on c.state_id = s.id"
     cur.execute(my_text)  # Here, a tuple needs to be used
-    rows = cur.fetchall()
+    rows = cur.fetchall()  # The result
     for row in rows:
         print(row)
     cur.close()
