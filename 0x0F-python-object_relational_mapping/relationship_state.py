@@ -19,5 +19,5 @@ class State(Base):
                 unique=True)
     name = Column(String(128),
                   nullable=False)
-
+    
     cities = relationship("City", backref="state", cascade="all, delete")

@@ -13,7 +13,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    result = session.query(State).filter(State.name.ilike('%a%')).all()
+    result = session.query(State).filter(State.name.like('%a%'))
     # The above query uses ILIKE instead of LIKE because the former
     # is NOT case sensitive
 
