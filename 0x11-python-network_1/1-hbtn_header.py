@@ -3,6 +3,9 @@
 """
 if __name__ == "__main__":
     from urllib import request
-    with request.urlopen('https://intranet.hbtn.io/status') as response:
+    import sys
+
+    arg = sys.argv[1]
+    with request.urlopen(arg) as response:
         html = response.info()
         print(html['X-Request-Id'])
