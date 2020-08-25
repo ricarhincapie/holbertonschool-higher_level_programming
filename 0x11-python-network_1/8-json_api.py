@@ -7,7 +7,7 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) > 1:
-        q = sys.argv[1]
+        q = str(sys.argv[1])
     else:
         q = ""
     url = 'http://de0f2fdee31c.ff38d7df.hbtn-cod.io:5000/search_user'
@@ -15,7 +15,7 @@ if __name__ == "__main__":
     try:
         # response.raise_for_status()
         json_response = response.json()
-        if (len(json_response)) == 0:
+        if (len(json_response)) == 0 or not json_response:
             print("No result")
         if (len(json_response)) > 0:
             print("[{}] {}".format(json_response['id'], json_response['name']))
