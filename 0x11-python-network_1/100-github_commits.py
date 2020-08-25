@@ -13,9 +13,11 @@ if __name__ == "__main__":
         own_name, rep_name)
     response = requests.get(url)
     json_response = response.json()
-    i = 0
-    while i < 10:
-        sha = json_response[i].get('sha')
-        auth = json_response[i].get('commit').get('author').get('name')
-        print("{}: {}".format(sha, auth))
-        i = i + 1
+
+    for count, comm in enumerate(json_response):
+        if count < 10:
+            sha = comm.get('sha')
+            auth = comm.get('commit').get('author').get('name')
+            print("{}: {}".format(sha, auth))
+        else:
+            exit()
