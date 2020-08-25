@@ -12,7 +12,11 @@ if __name__ == "__main__":
     url = 'https://api.github.com/repos/{}/{}/commits'.format(
         own_name, rep_name)
     response = requests.get(url)
-    json_response = response.json()
+    try:
+        json_response = response.json()
+    except ValueError:
+        print("Not a valid JSON")
+        exit()
     i = 0
     while i < 10:
         sha = json_response[i].get('sha')
