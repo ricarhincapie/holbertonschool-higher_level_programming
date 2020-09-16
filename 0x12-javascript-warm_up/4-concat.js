@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
-const args = process.argv;
+const first = process.argv[2];
+const second = process.argv[3];
 
-if (args.length >= 4) {
-  console.log(args[2] + ' is ' + args[3]);
-}
+console.log(first + ' is ' + second);
