@@ -10,5 +10,5 @@ if (isNaN(a) || isNaN(b)) {
 }
 
 function add (a, b) {
-  console.log(a * b);
+  console.log(parseInt(a) + parseInt(b));
 }
