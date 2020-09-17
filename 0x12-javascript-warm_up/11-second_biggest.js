@@ -9,12 +9,14 @@ if (len <= 3) {
 } else {
   let count = 2;
   let biggest = 0; let second = 0; let tmp = 0;
-  while (count < len) {
+  while (count <= len) {
     if (parseInt(args[count]) > biggest) {
       tmp = biggest;
       biggest = parseInt(args[count]);
     } else if (tmp > second) {
       second = tmp;
+    } else if (parseInt(args[count]) > second) {
+      second = parseInt(args[count]);
     }
     count++;
   }
