@@ -8,7 +8,6 @@ request.get(myUrl, function (err, response, body) { /* Aparently it needs all ar
   if (err) {
     console.error(err);
   } else {
-    console.log(body);
     fs.writeFile(myFile, body, 'utf8', (err) => {
       if (err) {
         console.error(err);
