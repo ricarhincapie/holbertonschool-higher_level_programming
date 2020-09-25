@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+my_num=0
+while [ $my_num -lt 10 ]
+do
+    rm "$my_num"-script.js
+    rm "$my_num"-main.html
+    my_num=$((my_num + 1))
+done
